@@ -1,0 +1,17 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #121214;
+  color: #e8e8e8;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+}
