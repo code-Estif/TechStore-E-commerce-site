@@ -1,85 +1,78 @@
 <div align="center">
+
   <img src="./Preview.png" width="100%" alt="TechStore Preview">
-  <h1>TechStore</h1>
-  <p><strong>A Sleek, Interactive E-Commerce UI for Tech Enthusiasts</strong></p>
 
-  <p>
-    <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
-    <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
-    <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" />
-  </p>
+  # TechStore
+
+  **A React e-commerce interface focused on filtering, comparison, and state management.**
+
 </div>
 
----
+## Overview
 
-## 🎯 The Problem This Solves
+TechStore is a frontend e-commerce experience for browsing and comparing technology products.
 
-Modern e-commerce sites often suffer from **"Filter Friction"** and **"Context Loss."** Users frequently struggle to find specific technical products within large catalogs or lose track of their selections when navigated away from the main view.
+The project goes beyond a static product page by implementing multi-filtering, product comparison, cart management, sorting, and persistent client-side state.
 
-**TechStore** provides a seamless, "single-page-feel" solution where advanced filtering, product comparison, and cart management coexist without jarring page reloads or complex UI hurdles.
+## Key Features
 
----
+- Responsive product grid
+- Multi-criteria filtering by category, brand, price, specifications, stock, and rating
+- Product sorting by price and rating
+- Side-by-side comparison with a two-product limit
+- Shopping cart with quantity controls and live totals
+- Persistent cart and filter state using `localStorage`
+- Responsive dark UI
 
-## ✨ Features Built
+## Technical Highlights
 
-- **Interactive Product Grid**: A responsive layout handling 50+ unique tech products with real-time feedback.
-- **Advanced Multi-Filter Panel**: Category, brand, price range, technical specs (RAM/Storage), stock availability, and customer ratings.
-- **Side-by-Side Comparison**: A modal-based comparison engine that contrasts deep technical specs between any two products.
-- **Persistent Shopping Cart**: A full-featured cart with quantity controls and real-time total calculations.
-- **Modern Dark UI**: A premium, "developer-first" aesthetic focused on high readability and low eye strain.
+### Multi-filter logic
 
----
+Multiple filters can be active at the same time. Results are narrowed by the combined criteria rather than a single filter.
 
-## 🧠 Logic Handled
+### Global state
 
-The core of this project isn't just the UI; it's the complex state management behind it:
+React Context API is used for shared cart and comparison state.
 
-- **Universal Multi-Filter Logic (AND Logic)**: Implementing a filtration engine that allows multiple active filters to intersect. A product only shows if it meets *all* selected criteria (e.g., Apple + 16GB RAM + In Stock + Under $1200).
-- **Global Selection Constraints**: Logic to strictly limit product comparison to exactly two items, providing clear UI feedback (disabling other checkboxes) when the limit is reached.
-- **State Persistence**: Syncing the entire filter state and cart contents with `localStorage`. This ensures that a page refresh doesn't wipe out a user's progress or their carefully selected filters.
-- **Dynamic Sorting Engine**: Implementing custom sorting algorithms for Price (Low/High) and Ratings that work *on top* of the filtered results.
+### Persistent state
 
----
+Cart and filter data are synchronized with `localStorage`, allowing the user's selections to survive a page refresh.
 
-## 🛠 Tech Stack
+### Component-based architecture
 
-- **Framework**: React 18 (Hooks: `useState`, `useMemo`, `useEffect`, `useContext`)
-- **Routing**: React Router 6
-- **Styling**: Vanilla CSS3 (Custom BEM Architecture & CSS Variables)
-- **State Management**: React Context API
-- **Build Tool**: Vite
+The application is organized around reusable React components and separate pages for the product catalog and cart.
 
----
+## Tech Stack
 
-## 🧱 Key Challenges
+- **React 18**
+- **React Router 6**
+- **Vite**
+- **Vanilla CSS3**
+- **React Context API**
+- **JavaScript**
 
-### 1. The "Filter Intersection" Problem
-The biggest challenge was ensuring that the filter panel didn't become buggy as more filters were added. Handling the logic so that "Phones" could be filtered by "8 GB RAM" while simultaneously excluding "Out of Stock" items required a highly optimized `useMemo` filter chain to maintain performance.
+## Getting Started
 
-### 2. UI Consistency without Libraries
-Building a complex comparison table and a custom-styled range slider from scratch using only Vanilla CSS was challenging. It required meticulous attention to CSS Variables and the BEM naming convention to ensure the code remained maintainable and the dark theme felt cohesive across different components.
+```bash
+git clone https://github.com/code-Estif/TechStore-E-commerce-site.git
+cd TechStore-E-commerce-site
+npm install
+npm run dev
+```
 
-### 3. State Syncing
-Managing two separate global contexts (Cart and Compare) while ensuring the URL-based category filtering (passed via search params) didn't conflict with locally stored filters required careful coordination of React's lifecycle methods.
+## What This Project Demonstrates
 
----
+- React state management
+- Client-side filtering and sorting
+- Reusable component architecture
+- E-commerce interactions
+- Responsive UI implementation
+- Browser storage persistence
 
-## 🔧 Installation & Setup
+## Portfolio Note
 
-1. **Clone & Install**
-   ```bash
-   git clone https://github.com/your-username/techstore.git
-   cd techstore
-   npm install
-   ```
-
-2. **Launch**
-   ```bash
-   npm run dev
-   ```
+TechStore is a flagship technical project in my frontend portfolio. It demonstrates application-level React skills alongside visual UI work.
 
 ---
 
-<div align="center">
-  <p>Built as a demonstration of high-level React logic and clean UI design.</p>
-</div>
+**Built by Estif**
